@@ -113,3 +113,6 @@ gem 'sassc', github: 'sass/sassc-ruby', group: :development
 
 # Core for all social media related functionality for Spree.
 gem 'spree_social', github: 'spree-contrib/spree_social'
+
+# Straightforward review/rating functionality.
+gem 'spree_reviews', github: 'spree-contrib/spree_reviews'
