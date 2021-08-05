@@ -104,3 +104,6 @@ gem 'activerecord-nulldb-adapter'
 
 # improved JSON rendering performance
 gem 'oj'
+
+# Core for all social media related functionality for Spree.
+gem 'spree_social', github: 'spree-contrib/spree_social'
