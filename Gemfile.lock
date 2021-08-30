@@ -319,6 +319,10 @@ GEM
       addressable (~> 2.7)
     letter_opener (1.7.0)
       launchy (~> 2.2)
+    letter_opener_web (1.4.0)
+      actionmailer (>= 3.2)
+      letter_opener (~> 1.0)
+      railties (>= 3.2)
     libv8-node (15.14.0.1)
     listen (3.4.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
@@ -752,6 +756,7 @@ DEPENDENCIES
   flipper-ui
   font_assets
   letter_opener
+  letter_opener_web
   listen
   memory_profiler
   mini_racer

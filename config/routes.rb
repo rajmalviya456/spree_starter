@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   # Spree routes
   mount Spree::Core::Engine, at: '/'
 
+  # Letter Opener Route
+  mount LetterOpenerWeb::Engine, at: '/letter_opener'
+
   # sidekiq web UI
   require 'sidekiq/web'
   Sidekiq::Web.use Rack::Auth::Basic do |username, password|
