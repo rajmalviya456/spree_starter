@@ -27,13 +27,7 @@
     "postdeploy": "bundle exec rails db:seed && SKIP_SAMPLE_IMAGES=true bundle exec rake spree_sample:load"
   },
   "addons": [
-    "memcachedcloud",
-    "papertrail",
-    "heroku-postgresql",
-    "rediscloud",
-    "sendgrid",
-    "sentry",
-    "scout"
+    "heroku-postgresql"
   ],
   "buildpacks": [
     {
