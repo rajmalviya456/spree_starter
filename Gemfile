@@ -122,3 +122,6 @@ gem 'letter_opener_web'
 
 # Volume Pricing is an extension to Spree that uses predefined ranges of quantities to determine the price for a particular product variant.
 gem 'spree_volume_pricing', github: 'spree-contrib/spree_volume_pricing'
+
+# Build a marketplace on top of Spree
+gem 'spree_multi_vendor'
