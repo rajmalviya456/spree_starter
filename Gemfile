@@ -124,4 +124,4 @@ gem 'letter_opener_web'
 gem 'spree_volume_pricing', github: 'spree-contrib/spree_volume_pricing'
 
 # Build a marketplace on top of Spree
-gem 'spree_multi_vendor'
+gem 'spree_multi_vendor', github: 'spree-contrib/spree_multi_vendor', branch: 'main'
