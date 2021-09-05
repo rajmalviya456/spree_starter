@@ -119,3 +119,6 @@ gem 'spree_reviews', github: 'spree-contrib/spree_reviews'
 
 # Gives letter_opener an interface for browsing sent emails.
 gem 'letter_opener_web'
+
+# Volume Pricing is an extension to Spree that uses predefined ranges of quantities to determine the price for a particular product variant.
+gem 'spree_volume_pricing', github: 'spree-contrib/spree_volume_pricing'
