@@ -69,7 +69,7 @@ Rails.application.configure do
     end
   end
 
-  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.delivery_method = :letter_opener_web
   config.action_mailer.perform_deliveries = true
 
   config.hosts << /.*\.lvh\.me/

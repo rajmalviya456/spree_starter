@@ -116,3 +116,6 @@ gem 'spree_social', github: 'spree-contrib/spree_social'
 
 # Straightforward review/rating functionality.
 gem 'spree_reviews', github: 'spree-contrib/spree_reviews'
+
+# Gives letter_opener an interface for browsing sent emails.
+gem 'letter_opener_web'
