@@ -1,12 +1,14 @@
-# Spree Starter (formerly Spark Starter Kit)
-
-[![Circle CI](https://circleci.com/gh/spree/spree_starter.svg?style=svg)](https://circleci.com/gh/spree/spree_starter) [![Maintainability](https://api.codeclimate.com/v1/badges/d240686c99b3d35eb61b/maintainability)](https://codeclimate.com/github/spree/spree_starter/maintainability)
+# Spree Starter
 
 This a dockerized [Spree Commerce](https://spreecommerce.org) application template ready to for local development and deployment to cloud providers.
 
-## Launch on Heroku
+## Deploy in the cloud
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+
+<a href="https://render.com/deploy?repo=https://github.com/spree/spree_starter/tree/main">
+  <img src="https://render.com/images/deploy-to-render-button.svg" alt="Deploy to Render" height=32>
+</a>
 
 ## Local Installation
 
@@ -21,7 +23,7 @@ This a dockerized [Spree Commerce](https://spreecommerce.org) application templa
 bin/setup
 ```
 
-This will automatically launch the application at `http://localhost:3000`
+This will automatically launch the application at `http://localhost:4000/admin`
 
 #### (Optional) Import sample data such as products, categories, etc
 
@@ -39,19 +41,32 @@ docker-compose up
 
 #### Install required tools and dependencies
 
-1. RVM - https://rvm.io/
-2. Ruby - `rvm install 3.0.2`
-3. Bundler - `gem install bundler`
-4. (MacOS) HomeBrew - https://brew.sh/
-5. (MacOS) PostgreSQL - `brew install postgresql`
-6. (MacOS) Redis - `brew install redis`
-7. (MacOS) ImageMagick - `brew install imagemagick`
+1. HomeBrew - https://brew.sh/
+2. Install required packages
+
+      ```bash
+      brew install gpg postgresql redis imagemagick
+      createuser -P -d postgres
+      ```
+
+3. RVM - https://rvm.io/
+4. NVM - https://github.com/nvm-sh/nvm
+5. Ruby - `rvm install 3.0.2`
+6. Node - `nvm install`
+7. Yarn - `npm -g install yarn`
 
 #### Run setup script
 
 ```bash
 bin/setup-no-docker
 ```
+
+## Adding Storefront
+
+Spree is a [headless e-commerce platform](https://dev-docs.spreecommerce.org/getting-started/headless-commerce) which you can use with any storefront you like. We have pre-built integrations with:
+
+* [Next.js Commerce](https://dev-docs.spreecommerce.org/storefronts/next.js-commerce)
+* [Vue Storefront](https://dev-docs.spreecommerce.org/storefronts/vue-storefront)
 
 ## Updating
 

@@ -5,7 +5,6 @@
 // the compiled file.
 //
 //= require spree/backend
-
 //= require_tree .
 //= require spree/backend/spree_reviews
 //= require spree/backend/spree_volume_pricing
