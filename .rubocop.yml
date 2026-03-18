@@ -111,7 +111,7 @@ Style/ClassAndModuleChildren:
 
 Style/AndOr:
   Exclude:
-    - '**/*controller.rb'
+    - "**/*controller.rb"
 
 Bundler/OrderedGems:
   Enabled: false
@@ -121,4 +121,4 @@ Lint/MissingSuper:
 
 Lint/UnusedMethodArgument:
   Exclude:
-    - 'app/services/**/*'
+    - "app/services/**/*"

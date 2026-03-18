@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe Spree::Product, type: :model do
   let(:store) { @default_store }
 
