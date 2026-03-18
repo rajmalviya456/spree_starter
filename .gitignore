@@ -7,10 +7,6 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore Gemfile.lock — each context (user, core dev, CI) generates its own.
-# For release builds, Gemfile.lock is committed on the release tag.
-Gemfile.lock
-
 # Ignore all environment files
 .env*
 !.env.example
