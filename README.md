@@ -12,6 +12,12 @@ npx create-spree-app my-store
 
 This scaffolds a full project with Docker, a Next.js storefront, and this backend — all configured and ready to run.
 
+## Deploy to Render
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/spree/spree-starter)
+
+One click deploys the backend (web + worker), PostgreSQL, and Redis.
+
 ## Manual Setup
 
 ### Prerequisites
