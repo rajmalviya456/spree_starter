@@ -3,6 +3,18 @@
 source 'https://rubygems.org'
 ruby file: '.ruby-version'
 
+# Load .env for SPREE_PATH (dotenv-rails only loads at Rails boot, not during bundle)
+env_file = File.expand_path('.env', __dir__)
+if File.exist?(env_file)
+  File.readlines(env_file).each do |line|
+    line = line.strip
+    next if line.empty? || line.start_with?('#')
+
+    key, value = line.split('=', 2)
+    ENV[key] = value if key && value && !ENV.key?(key)
+  end
+end
+
 # Spree Commerce
 spree_path = ENV['SPREE_PATH']
 
