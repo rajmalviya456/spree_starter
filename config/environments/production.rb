@@ -53,9 +53,11 @@ Rails.application.configure do
   # Don't log any deprecations.
   config.active_support.report_deprecations = false
 
-  # Use Redis for caching if REDIS_URL is set, otherwise fall back to memory store.
-  if ENV["REDIS_URL"].present?
-    config.cache_store = :redis_cache_store, { url: ENV["REDIS_URL"] }
+  # Use Redis for caching. REDIS_CACHE_URL allows a dedicated cache Redis,
+  # falling back to REDIS_URL (shared with Sidekiq) if not set.
+  redis_cache_url = ENV["REDIS_CACHE_URL"] || ENV["REDIS_URL"]
+  if redis_cache_url.present?
+    config.cache_store = :redis_cache_store, { url: redis_cache_url }
   else
     config.cache_store = :memory_store
   end
