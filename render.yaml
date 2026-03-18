@@ -16,11 +16,11 @@ services:
           name: spree-redis
           type: redis
           property: connectionString
-      - key: REDIS_CACHE_URL
-        fromService:
-          name: spree-redis-cache
-          type: redis
-          property: connectionString
+      # - key: REDIS_CACHE_URL
+      #   fromService:
+      #     name: spree-redis-cache
+      #     type: redis
+      #     property: connectionString
       - key: SECRET_KEY_BASE
         generateValue: true
       - key: RAILS_LOG_LEVEL
@@ -51,14 +51,15 @@ services:
   - type: redis
     name: spree-redis
     plan: free
-    maxmemoryPolicy: noeviction
+    # maxmemoryPolicy: noeviction
     ipAllowList: []
 
-  - type: redis
-    name: spree-redis-cache
-    plan: free
-    maxmemoryPolicy: allkeys-lru
-    ipAllowList: []
+  # uncomment to enable dedicated cache redis
+  # - type: redis
+  #   name: spree-redis-cache
+  #   plan: free
+  #   maxmemoryPolicy: allkeys-lru
+  #   ipAllowList: []
 
 databases:
   - name: spree-db
