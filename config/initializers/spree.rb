@@ -62,6 +62,10 @@ end
 Spree.user_class = 'Spree::User'
 Spree.admin_user_class = 'Spree::AdminUser'
 
+if ENV['MEILISEARCH_URL'].present?
+  Spree.search_provider = 'Spree::SearchProvider::Meilisearch'
+end
+
 Rails.application.config.to_prepare do
   require_dependency 'spree/authentication_helpers'
 end

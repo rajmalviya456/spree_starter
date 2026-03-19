@@ -54,6 +54,9 @@ gem 'tailwindcss-rails'
 gem 'thruster', require: false
 gem 'turbo-rails'
 
+# Search
+gem 'meilisearch', '>= 0.28'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[windows jruby]
 
