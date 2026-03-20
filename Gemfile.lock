@@ -130,7 +130,7 @@ GEM
       activerecord (>= 4.0.0, < 8.2)
     awesome_print (1.9.2)
     aws-eventstream (1.4.0)
-    aws-partitions (1.1227.0)
+    aws-partitions (1.1228.0)
     aws-sdk-core (3.244.0)
       aws-eventstream (~> 1, >= 1.3.0)
       aws-partitions (~> 1, >= 1.992.0)
@@ -361,7 +361,7 @@ GEM
     mapkick-rb (0.2.0)
     marcel (1.1.0)
     matrix (0.4.3)
-    mcp (0.8.0)
+    mcp (0.9.0)
       json-schema (>= 4.1)
     meilisearch (0.33.0)
       httparty (~> 0.24)
@@ -403,21 +403,21 @@ GEM
     net-smtp (0.5.1)
       net-protocol
     nio4r (2.7.5)
-    nokogiri (1.19.1-aarch64-linux-gnu)
+    nokogiri (1.19.2-aarch64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.19.1-aarch64-linux-musl)
+    nokogiri (1.19.2-aarch64-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.19.1-arm-linux-gnu)
+    nokogiri (1.19.2-arm-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.19.1-arm-linux-musl)
+    nokogiri (1.19.2-arm-linux-musl)
       racc (~> 1.4)
-    nokogiri (1.19.1-arm64-darwin)
+    nokogiri (1.19.2-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.1-x86_64-darwin)
+    nokogiri (1.19.2-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.19.1-x86_64-linux-gnu)
+    nokogiri (1.19.2-x86_64-linux-gnu)
       racc (~> 1.4)
-    nokogiri (1.19.1-x86_64-linux-musl)
+    nokogiri (1.19.2-x86_64-linux-musl)
       racc (~> 1.4)
     octokit (4.25.1)
       faraday (>= 1, < 3)
@@ -648,10 +648,10 @@ GEM
       simplecov (~> 0.19)
     simplecov-html (0.13.2)
     simplecov_json_formatter (0.1.4)
-    spree (5.4.0.beta10)
-      spree_api (= 5.4.0.beta10)
-      spree_core (= 5.4.0.beta10)
-    spree_admin (5.4.0.beta10)
+    spree (5.4.0.rc1)
+      spree_api (= 5.4.0.rc1)
+      spree_core (= 5.4.0.rc1)
+    spree_admin (5.4.0.rc1)
       active_link_to
       breadcrumbs_on_rails (~> 4.1)
       chartkick (~> 5.0)
@@ -663,19 +663,19 @@ GEM
       mapkick-rb (~> 0.1)
       pagy (~> 43.0)
       ruby-oembed (~> 0.18)
-      spree (>= 5.4.0.beta10)
+      spree (>= 5.4.0.rc1)
       stimulus-rails
       tailwindcss-rails (>= 4.0)
       tailwindcss-ruby (>= 4.0)
       tinymce-rails (~> 6.8.5)
       turbo-rails
-    spree_api (5.4.0.beta10)
+    spree_api (5.4.0.rc1)
       alba (~> 3.0)
       oj (~> 3.16)
       pagy (~> 43.0)
-      spree_core (= 5.4.0.beta10)
+      spree_core (= 5.4.0.rc1)
       typelizer (~> 0.10.0)
-    spree_core (5.4.0.beta10)
+    spree_core (5.4.0.rc1)
       active_storage_validations (= 1.3.0)
       acts-as-taggable-on
       acts_as_list (>= 0.8)
@@ -741,8 +741,8 @@ GEM
       spree (>= 5.4.0.alpha)
       timecop
       webdrivers
-    spree_emails (5.4.0.beta10)
-      spree (>= 5.4.0.beta10)
+    spree_emails (5.4.0.rc1)
+      spree (>= 5.4.0.rc1)
     spree_extension (1.0.2)
       thor (~> 1.0)
     spree_i18n (5.3.2)
@@ -910,7 +910,7 @@ CHECKSUMS
   awesome_nested_set (3.9.0) sha256=3ce99e816550f97f4de118e621630070aacf24928b920fe4a68846578a8daaed
   awesome_print (1.9.2) sha256=e99b32b704acff16d768b3468680793ced40bfdc4537eb07e06a4be11133786e
   aws-eventstream (1.4.0) sha256=116bf85c436200d1060811e6f5d2d40c88f65448f2125bc77ffce5121e6e183b
-  aws-partitions (1.1227.0) sha256=122dd20fe108cb38d38cccbc1f2592408bc1b30ca6e0d05797a7af2501567e29
+  aws-partitions (1.1228.0) sha256=b7155f770b3082aaf55555cc70d14ed0cbbee3e6b1dc48d7e5cf360136dc7417
   aws-sdk-core (3.244.0) sha256=3e458c078b0c5bdee95bc370c3a483374b3224cf730c1f9f0faf849a5d9a18ea
   aws-sdk-kms (1.123.0) sha256=d405f37e82f8fa32045ca8980be266c0b45b37aaf2012afe0254321a1e811f20
   aws-sdk-s3 (1.217.0) sha256=6ea709272c666888b14e9c62345abd9a6a967759ae13667c28f01fde6823c24b
@@ -1011,7 +1011,7 @@ CHECKSUMS
   mapkick-rb (0.2.0) sha256=c70da2e1edc56da290ccab51fd932ee5b1c562fe9f7877de0333b5562937e28e
   marcel (1.1.0) sha256=fdcfcfa33cc52e93c4308d40e4090a5d4ea279e160a7f6af988260fa970e0bee
   matrix (0.4.3) sha256=a0d5ab7ddcc1973ff690ab361b67f359acbb16958d1dc072b8b956a286564c5b
-  mcp (0.8.0) sha256=ae8bd146bb8e168852866fd26f805f52744f6326afb3211e073f78a95e0c34fb
+  mcp (0.9.0) sha256=a0a3737b0ac9df0772f4ef7e2b013c260ddbcf217a5d50a66bff0baeddf03e47
   meilisearch (0.33.0) sha256=a5d3c3f28cdc4394ee4f0f390efe158650f99cfb390fd073f44fc780a2aa41e2
   method_source (1.1.0) sha256=181301c9c45b731b4769bc81e8860e72f9161ad7d66dd99103c9ab84f560f5c5
   metrics (0.15.0) sha256=61ded5bac95118e995b1bc9ed4a5f19bc9814928a312a85b200abbdac9039072
@@ -1032,14 +1032,14 @@ CHECKSUMS
   net-protocol (0.2.2) sha256=aa73e0cba6a125369de9837b8d8ef82a61849360eba0521900e2c3713aa162a8
   net-smtp (0.5.1) sha256=ed96a0af63c524fceb4b29b0d352195c30d82dd916a42f03c62a3a70e5b70736
   nio4r (2.7.5) sha256=6c90168e48fb5f8e768419c93abb94ba2b892a1d0602cb06eef16d8b7df1dca1
-  nokogiri (1.19.1-aarch64-linux-gnu) sha256=cfdb0eafd9a554a88f12ebcc688d2b9005f9fce42b00b970e3dc199587b27f32
-  nokogiri (1.19.1-aarch64-linux-musl) sha256=1e2150ab43c3b373aba76cd1190af7b9e92103564063e48c474f7600923620b5
-  nokogiri (1.19.1-arm-linux-gnu) sha256=0a39ed59abe3bf279fab9dd4c6db6fe8af01af0608f6e1f08b8ffa4e5d407fa3
-  nokogiri (1.19.1-arm-linux-musl) sha256=3a18e559ee499b064aac6562d98daab3d39ba6cbb4074a1542781b2f556db47d
-  nokogiri (1.19.1-arm64-darwin) sha256=dfe2d337e6700eac47290407c289d56bcf85805d128c1b5a6434ddb79731cb9e
-  nokogiri (1.19.1-x86_64-darwin) sha256=7093896778cc03efb74b85f915a775862730e887f2e58d6921e3fa3d981e68bf
-  nokogiri (1.19.1-x86_64-linux-gnu) sha256=1a4902842a186b4f901078e692d12257678e6133858d0566152fe29cdb98456a
-  nokogiri (1.19.1-x86_64-linux-musl) sha256=4267f38ad4fc7e52a2e7ee28ed494e8f9d8eb4f4b3320901d55981c7b995fc23
+  nokogiri (1.19.2-aarch64-linux-gnu) sha256=c34d5c8208025587554608e98fd88ab125b29c80f9352b821964e9a5d5cfbd19
+  nokogiri (1.19.2-aarch64-linux-musl) sha256=7f6b4b0202d507326841a4f790294bf75098aef50c7173443812e3ac5cb06515
+  nokogiri (1.19.2-arm-linux-gnu) sha256=b7fa1139016f3dc850bda1260988f0d749934a939d04ef2da13bec060d7d5081
+  nokogiri (1.19.2-arm-linux-musl) sha256=61114d44f6742ff72194a1b3020967201e2eb982814778d130f6471c11f9828c
+  nokogiri (1.19.2-arm64-darwin) sha256=58d8ea2e31a967b843b70487a44c14c8ba1866daa1b9da9be9dbdf1b43dee205
+  nokogiri (1.19.2-x86_64-darwin) sha256=7d9af11fda72dfaa2961d8c4d5380ca0b51bc389dc5f8d4b859b9644f195e7a4
+  nokogiri (1.19.2-x86_64-linux-gnu) sha256=fa8feca882b73e871a9845f3817a72e9734c8e974bdc4fbad6e4bc6e8076b94f
+  nokogiri (1.19.2-x86_64-linux-musl) sha256=93128448e61a9383a30baef041bf1f5817e22f297a1d400521e90294445069a8
   octokit (4.25.1) sha256=c02092ee82dcdfe84db0e0ea630a70d32becc54245a4f0bacfd21c010df09b96
   oj (3.16.16) sha256=3635b36128991796434f55da8decc0de236a323535adcb36fc04e6d0253c013d
   orm_adapter (0.5.0) sha256=aa5d0be5d540cbb46d3a93e88061f4ece6a25f6e97d6a47122beb84fe595e9b9
@@ -1126,12 +1126,12 @@ CHECKSUMS
   simplecov-cobertura (3.1.0) sha256=6d7f38aa32c965ca2174b2e5bd88cb17138eaf629518854976ac50e628925dc5
   simplecov-html (0.13.2) sha256=bd0b8e54e7c2d7685927e8d6286466359b6f16b18cb0df47b508e8d73c777246
   simplecov_json_formatter (0.1.4) sha256=529418fbe8de1713ac2b2d612aa3daa56d316975d307244399fa4838c601b428
-  spree (5.4.0.beta10) sha256=2856699d5508ecc41e0415837813a288424a3ccbf304f73a6ccb67ec3ccda910
-  spree_admin (5.4.0.beta10) sha256=e6a831bc5615ebe660972537edd2653fc5429031d2f37630010ee349f6f89e23
-  spree_api (5.4.0.beta10) sha256=a18a22a821aa3e135f790c4ea49b18a526d0f2c1d8d3b603a9ca6ff8a2e0aed6
-  spree_core (5.4.0.beta10) sha256=83a2234ec1127d942e9036721ea2544f780585abe2f8feda6691b3935d132e5b
+  spree (5.4.0.rc1) sha256=b3bff08cdb38ac2182d7fd61fdd846ff105253a56c33a90fb928af7a3086a066
+  spree_admin (5.4.0.rc1) sha256=1f3ddd3a1c5d9c90eb58559cb69a51589acc69c7e9c0161f0ee94e99bf7b587b
+  spree_api (5.4.0.rc1) sha256=3691d8dfc96b0e8bb04fcf53f14d84810dbee485c948028394619d13e72ad6bc
+  spree_core (5.4.0.rc1) sha256=37c94e7eb8e2c8bac4558bf76246c4cc13388ca0654b7c439c2957314e213182
   spree_dev_tools (0.6.0.rc1) sha256=3e2c3fe15f5c1ab2859c4047a1a40b55b22c998570afc6d0d03692bcdc64209f
-  spree_emails (5.4.0.beta10) sha256=892283fb2dea83ec98ce0d53aa46493253e330b1c9a40c6799179d6d3fb49bb2
+  spree_emails (5.4.0.rc1) sha256=8f3a0f2e4e41b3e4fbd50b03bc4b30acee75794c649cb08127cb1e29c5dcdbfe
   spree_extension (1.0.2) sha256=71725dafe45319a2be1bd2b564a416afe8029af8e18ac703bdb835e09553e1df
   spree_i18n (5.3.2) sha256=03b805235ca156644951f6bc3d07cbe43d0aa01134c4a27e3f3304011956f79b
   spree_stripe (1.6.0.beta)
