@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_17_150033) do
+ActiveRecord::Schema[8.1].define(version: 2026_03_25_132247) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -939,6 +939,19 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_17_150033) do
     t.datetime "updated_at", null: false
     t.text "value"
     t.index ["key"], name: "index_spree_preferences_on_key", unique: true
+  end
+
+  create_table "spree_price_histories", force: :cascade do |t|
+    t.decimal "amount", precision: 10, scale: 2, null: false
+    t.decimal "compare_at_amount", precision: 10, scale: 2
+    t.datetime "created_at", null: false
+    t.string "currency", null: false
+    t.bigint "price_id", null: false
+    t.datetime "recorded_at", null: false
+    t.bigint "variant_id", null: false
+    t.index ["price_id", "recorded_at"], name: "idx_price_histories_price_recorded"
+    t.index ["recorded_at"], name: "idx_price_histories_recorded_at"
+    t.index ["variant_id", "currency", "recorded_at"], name: "idx_price_histories_variant_currency_recorded"
   end
 
   create_table "spree_price_lists", force: :cascade do |t|
