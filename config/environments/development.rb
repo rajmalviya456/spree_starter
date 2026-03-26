@@ -1,7 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  # When SMTP_HOST is set (e.g. Docker with Mailpit), deliver via SMTP.
+  # When SMTP_HOST is set deliver via SMTP.
   # Otherwise use Letter Opener to preview emails in the browser.
   if ENV["SMTP_HOST"].present?
     config.action_mailer.delivery_method = :smtp

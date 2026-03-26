@@ -19,8 +19,6 @@ x-app: &app
     RAILS_FORCE_SSL: "false"
     RAILS_ASSUME_SSL: "false"
     MEILISEARCH_URL: http://meilisearch:7700
-    SMTP_HOST: mailpit
-    SMTP_PORT: "1025"
 
 services:
   postgres:
@@ -56,12 +54,6 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-
-  mailpit:
-    image: axllent/mailpit
-    ports:
-      - "8025:8025"
-      - "1025:1025"
 
   web:
     <<: *app
