@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_25_132247) do
+ActiveRecord::Schema[8.1].define(version: 2026_03_26_203012) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -1977,6 +1977,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_25_132247) do
     t.datetime "created_at", null: false
     t.datetime "delivered_at"
     t.string "error_type"
+    t.string "event_id"
     t.string "event_name", null: false
     t.integer "execution_time"
     t.jsonb "payload", null: false
@@ -1990,6 +1991,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_25_132247) do
     t.index ["event_name"], name: "index_spree_webhook_deliveries_on_event_name"
     t.index ["response_code"], name: "index_spree_webhook_deliveries_on_response_code"
     t.index ["success"], name: "index_spree_webhook_deliveries_on_success"
+    t.index ["webhook_endpoint_id", "event_id"], name: "index_spree_webhook_deliveries_on_endpoint_and_event", unique: true, where: "(event_id IS NOT NULL)"
     t.index ["webhook_endpoint_id"], name: "index_spree_webhook_deliveries_on_webhook_endpoint_id"
   end
 
@@ -1997,6 +1999,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_25_132247) do
     t.boolean "active", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "deleted_at"
+    t.datetime "disabled_at"
+    t.string "disabled_reason"
+    t.string "name"
     t.string "secret_key", null: false
     t.bigint "store_id", null: false
     t.jsonb "subscriptions", null: false
