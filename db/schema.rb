@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_26_203012) do
+ActiveRecord::Schema[8.1].define(version: 2026_03_30_090114) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -343,6 +343,18 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_26_203012) do
     t.index ["number"], name: "index_spree_customer_returns_on_number", unique: true
     t.index ["stock_location_id"], name: "index_spree_customer_returns_on_stock_location_id"
     t.index ["store_id"], name: "index_spree_customer_returns_on_store_id"
+  end
+
+  create_table "spree_data_feeds", force: :cascade do |t|
+    t.boolean "active", default: true
+    t.datetime "created_at", null: false
+    t.string "name"
+    t.string "slug"
+    t.bigint "store_id"
+    t.string "type"
+    t.datetime "updated_at", null: false
+    t.index ["store_id", "slug", "type"], name: "index_spree_data_feeds_on_store_id_and_slug_and_type"
+    t.index ["store_id"], name: "index_spree_data_feeds_on_store_id"
   end
 
   create_table "spree_digital_links", force: :cascade do |t|

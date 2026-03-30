@@ -422,7 +422,7 @@ GEM
       ostruct (>= 0.2)
     orm_adapter (0.5.0)
     ostruct (0.6.3)
-    pagy (43.4.3)
+    pagy (43.4.4)
       json
       uri
       yaml
@@ -431,7 +431,7 @@ GEM
       parallel
     paranoia (3.1.0)
       activerecord (>= 7, < 8.2)
-    parser (3.3.11.0)
+    parser (3.3.11.1)
       ast (~> 2.4.1)
       racc
     pg (1.6.3)
@@ -642,10 +642,10 @@ GEM
       simplecov (~> 0.19)
     simplecov-html (0.13.2)
     simplecov_json_formatter (0.1.4)
-    spree (5.4.0.rc4)
-      spree_api (= 5.4.0.rc4)
-      spree_core (= 5.4.0.rc4)
-    spree_admin (5.4.0.rc4)
+    spree (5.4.0.rc5)
+      spree_api (= 5.4.0.rc5)
+      spree_core (= 5.4.0.rc5)
+    spree_admin (5.4.0.rc5)
       active_link_to
       breadcrumbs_on_rails (~> 4.1)
       chartkick (~> 5.0)
@@ -657,19 +657,19 @@ GEM
       mapkick-rb (~> 0.1)
       pagy (~> 43.0)
       ruby-oembed (~> 0.18)
-      spree (>= 5.4.0.rc4)
+      spree (>= 5.4.0.rc5)
       stimulus-rails
       tailwindcss-rails (>= 4.0)
       tailwindcss-ruby (>= 4.0)
       tinymce-rails (~> 6.8.5)
       turbo-rails
-    spree_api (5.4.0.rc4)
+    spree_api (5.4.0.rc5)
       alba (~> 3.0)
       oj (~> 3.16)
       pagy (~> 43.0)
-      spree_core (= 5.4.0.rc4)
+      spree_core (= 5.4.0.rc5)
       typelizer (~> 0.11.0)
-    spree_core (5.4.0.rc4)
+    spree_core (5.4.0.rc5)
       active_storage_validations (= 1.3.0)
       acts-as-taggable-on
       acts_as_list (>= 0.8)
@@ -1033,11 +1033,11 @@ CHECKSUMS
   oj (3.16.16) sha256=3635b36128991796434f55da8decc0de236a323535adcb36fc04e6d0253c013d
   orm_adapter (0.5.0) sha256=aa5d0be5d540cbb46d3a93e88061f4ece6a25f6e97d6a47122beb84fe595e9b9
   ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
-  pagy (43.4.3) sha256=0fc7608c5314cbd565d7c5d7eaeb3ef38b9c1721ffbe5c70ee7c2cc186604853
+  pagy (43.4.4) sha256=b41a57328a0aabfd222266a89e9de3dc3a735c17bd57f8113829c95fece5bef6
   parallel (1.27.0) sha256=4ac151e1806b755fb4e2dc2332cbf0e54f2e24ba821ff2d3dcf86bf6dc4ae130
   parallel_tests (5.6.0) sha256=b2d7af382d1c0289daba65308d9143b3ad82d817d500c0ad1b4bde468beb13af
   paranoia (3.1.0) sha256=36574a46e8df663d0da7d9008e987b72a6a9eccee13c058b7094acc810e39f52
-  parser (3.3.11.0) sha256=fe28ccb92d9221283ce143cb3c2e4c916e0f589ee0cc2a64867d7716354f19b1
+  parser (3.3.11.1) sha256=d17ace7aabe3e72c3cc94043714be27cc6f852f104d81aa284c2281aecc65d54
   pg (1.6.3) sha256=1388d0563e13d2758c1089e35e973a3249e955c659592d10e5b77c468f628a99
   pg (1.6.3-aarch64-linux) sha256=0698ad563e02383c27510b76bf7d4cd2de19cd1d16a5013f375dd473e4be72ea
   pg (1.6.3-aarch64-linux-musl) sha256=06a75f4ea04b05140146f2a10550b8e0d9f006a79cdaf8b5b130cde40e3ecc2c
@@ -1115,10 +1115,10 @@ CHECKSUMS
   simplecov-cobertura (3.1.0) sha256=6d7f38aa32c965ca2174b2e5bd88cb17138eaf629518854976ac50e628925dc5
   simplecov-html (0.13.2) sha256=bd0b8e54e7c2d7685927e8d6286466359b6f16b18cb0df47b508e8d73c777246
   simplecov_json_formatter (0.1.4) sha256=529418fbe8de1713ac2b2d612aa3daa56d316975d307244399fa4838c601b428
-  spree (5.4.0.rc4) sha256=1c429d746b79f61abbf2115116e507b72241ff03b6a4816bc1d8d5b31f8eacad
-  spree_admin (5.4.0.rc4) sha256=c1d9f2289583ea732c485e3cf3b1136c11c7314df35d5a882be9afd0d296b609
-  spree_api (5.4.0.rc4) sha256=850acbc4c44cd8f9a9ca1b059a0637c38e238878dee526b8ed6fa16375101f6b
-  spree_core (5.4.0.rc4) sha256=1cf63296a4b5b528cd66633dedf9d0180e84e980d147c1b5e34479de79625e78
+  spree (5.4.0.rc5) sha256=128e403365b73243b4d4aafe9a738ebd770031b0c118ba6c848fd00b55df80b3
+  spree_admin (5.4.0.rc5) sha256=73c25d97cfe19f81986619a88bb55a3a3ec1acf2772598c36fb28aa0313ddd72
+  spree_api (5.4.0.rc5) sha256=5d65de5e418d68a6941e7fce5f21b0145d87ec5f28e102d5ff906e09303778e5
+  spree_core (5.4.0.rc5) sha256=a0efd353a476319699dc11f4bb1c7ee1f405c1dbaca92809c57b2af639052bc3
   spree_dev_tools (0.6.0.rc1) sha256=3e2c3fe15f5c1ab2859c4047a1a40b55b22c998570afc6d0d03692bcdc64209f
   spree_extension (1.0.2) sha256=71725dafe45319a2be1bd2b564a416afe8029af8e18ac703bdb835e09553e1df
   spree_i18n (5.3.2) sha256=03b805235ca156644951f6bc3d07cbe43d0aa01134c4a27e3f3304011956f79b
