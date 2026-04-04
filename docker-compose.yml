@@ -58,6 +58,8 @@ services:
     <<: *app
     ports:
       - "${SPREE_PORT:-3000}:3000"
+    volumes:
+      - storage_data:/rails/storage
     healthcheck:
       test: curl -f http://localhost:3000/up || exit 1
       interval: 10s
@@ -68,8 +70,11 @@ services:
   worker:
     <<: *app
     command: bundle exec sidekiq
+    volumes:
+      - storage_data:/rails/storage
 
 volumes:
   postgres_data:
   redis_data:
   meilisearch_data:
+  storage_data:
