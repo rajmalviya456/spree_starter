@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_30_090114) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_04_120553) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -690,6 +690,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_30_090114) do
   create_table "spree_option_types", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.boolean "filterable", default: true, null: false
+    t.string "kind", default: "dropdown", null: false
     t.string "name", limit: 100
     t.integer "position", default: 0, null: false
     t.string "presentation", limit: 100
@@ -697,6 +698,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_30_090114) do
     t.jsonb "public_metadata"
     t.datetime "updated_at", null: false
     t.index ["filterable"], name: "index_spree_option_types_on_filterable"
+    t.index ["kind"], name: "index_spree_option_types_on_kind"
     t.index ["name"], name: "index_spree_option_types_on_name", unique: true
     t.index ["position"], name: "index_spree_option_types_on_position"
   end
@@ -722,6 +724,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_30_090114) do
   end
 
   create_table "spree_option_values", force: :cascade do |t|
+    t.string "color_code"
     t.datetime "created_at", null: false
     t.string "name"
     t.bigint "option_type_id"
@@ -770,6 +773,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_30_090114) do
     t.decimal "item_total", precision: 10, scale: 2, default: "0.0", null: false
     t.string "last_ip_address"
     t.string "locale"
+    t.bigint "market_id"
     t.decimal "non_taxable_adjustment_total", precision: 10, scale: 2, default: "0.0", null: false
     t.string "number", limit: 32
     t.string "payment_state"
@@ -799,6 +803,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_30_090114) do
     t.index ["considered_risky"], name: "index_spree_orders_on_considered_risky"
     t.index ["created_by_id"], name: "index_spree_orders_on_created_by_id"
     t.index ["gift_card_id"], name: "index_spree_orders_on_gift_card_id"
+    t.index ["market_id"], name: "index_spree_orders_on_market_id"
     t.index ["number"], name: "index_spree_orders_on_number", unique: true
     t.index ["ship_address_id"], name: "index_spree_orders_on_ship_address_id"
     t.index ["store_id"], name: "index_spree_orders_on_store_id"
