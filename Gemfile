@@ -22,14 +22,14 @@ if spree_path
   gem 'spree', path: "#{spree_path}/spree"
   gem 'spree_admin', path: "#{spree_path}/spree/admin"
 else
-  spree_version = '>= 5.4.0.beta8'
+  spree_version = '>= 5.4.0'
   gem 'spree', spree_version
   gem 'spree_admin', spree_version
 end
 
 # Extensions
 gem 'spree_i18n'
-gem 'spree_stripe', github: 'spree/spree_stripe'
+gem 'spree_stripe'
 
 # Rails & Infrastructure
 gem 'aws-sdk-s3', require: false
@@ -67,7 +67,7 @@ group :development, :test do
   gem 'listen'
   gem 'rubocop-rails-omakase', require: false
   gem 'simplecov-cobertura'
-  gem 'spree_dev_tools', '>= 0.6.0.rc1'
+  gem 'spree_dev_tools'
 end
 
 group :development do
