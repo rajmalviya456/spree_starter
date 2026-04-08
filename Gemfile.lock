@@ -642,10 +642,10 @@ GEM
       simplecov (~> 0.19)
     simplecov-html (0.13.2)
     simplecov_json_formatter (0.1.4)
-    spree (5.4.0.rc7)
-      spree_api (= 5.4.0.rc7)
-      spree_core (= 5.4.0.rc7)
-    spree_admin (5.4.0.rc7)
+    spree (5.4.0.rc8)
+      spree_api (= 5.4.0.rc8)
+      spree_core (= 5.4.0.rc8)
+    spree_admin (5.4.0.rc8)
       active_link_to
       breadcrumbs_on_rails (~> 4.1)
       chartkick (~> 5.0)
@@ -657,19 +657,19 @@ GEM
       mapkick-rb (~> 0.1)
       pagy (~> 43.0)
       ruby-oembed (~> 0.18)
-      spree (>= 5.4.0.rc7)
+      spree (>= 5.4.0.rc8)
       stimulus-rails
       tailwindcss-rails (>= 4.0)
       tailwindcss-ruby (>= 4.0)
       tinymce-rails (~> 6.8.5)
       turbo-rails
-    spree_api (5.4.0.rc7)
+    spree_api (5.4.0.rc8)
       alba (~> 3.0)
       oj (~> 3.16)
       pagy (~> 43.0)
-      spree_core (= 5.4.0.rc7)
+      spree_core (= 5.4.0.rc8)
       typelizer (~> 0.11.0)
-    spree_core (5.4.0.rc7)
+    spree_core (5.4.0.rc8)
       active_storage_validations (= 1.3.0)
       acts-as-taggable-on
       acts_as_list (>= 0.8)
@@ -1115,10 +1115,10 @@ CHECKSUMS
   simplecov-cobertura (3.1.0) sha256=6d7f38aa32c965ca2174b2e5bd88cb17138eaf629518854976ac50e628925dc5
   simplecov-html (0.13.2) sha256=bd0b8e54e7c2d7685927e8d6286466359b6f16b18cb0df47b508e8d73c777246
   simplecov_json_formatter (0.1.4) sha256=529418fbe8de1713ac2b2d612aa3daa56d316975d307244399fa4838c601b428
-  spree (5.4.0.rc7) sha256=6245eddfc7a7a971239573f6ee58d75e426ccb278b553c9c0b9131ee2a750295
-  spree_admin (5.4.0.rc7) sha256=5ea7f5bbb10f10501579bede639937b0929de77039537d94c5ef56215cba7256
-  spree_api (5.4.0.rc7) sha256=89caeb5e85fe23e286829de381ce1e118e65b49d5f3c853281baa9185b76deaf
-  spree_core (5.4.0.rc7) sha256=7960a55d65aa3d04f885b492c90d1531bf4f25e96b03ba24b6711cb8c5270e46
+  spree (5.4.0.rc8) sha256=7b465432b33eddc38567c779f16f119a3c3eb51e851a93515a42640d24900753
+  spree_admin (5.4.0.rc8) sha256=4270c64fbee68677e3f4c4663da033d7dfec220f993ba27f92cbbf4306763640
+  spree_api (5.4.0.rc8) sha256=ff8d77e8f66e8a981a953ea4ff28b1390487af181cfd1ba8006694c261f6c50f
+  spree_core (5.4.0.rc8) sha256=b495da5b04df0857fc033a66c13131574135ac1bc00bc4a67cd8f805e9c82ccd
   spree_dev_tools (0.6.0.rc1) sha256=3e2c3fe15f5c1ab2859c4047a1a40b55b22c998570afc6d0d03692bcdc64209f
   spree_extension (1.0.2) sha256=71725dafe45319a2be1bd2b564a416afe8029af8e18ac703bdb835e09553e1df
   spree_i18n (5.3.2) sha256=03b805235ca156644951f6bc3d07cbe43d0aa01134c4a27e3f3304011956f79b

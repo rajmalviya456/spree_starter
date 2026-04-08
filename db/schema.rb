@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_04_120553) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_08_124032) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -2061,8 +2061,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_04_120553) do
     t.bigint "zone_id"
     t.bigint "zoneable_id"
     t.string "zoneable_type"
+    t.index ["zone_id", "zoneable_type", "zoneable_id"], name: "index_spree_zone_members_uniqueness", unique: true
     t.index ["zone_id"], name: "index_spree_zone_members_on_zone_id"
-    t.index ["zoneable_id", "zoneable_type"], name: "index_spree_zone_members_on_zoneable_id_and_zoneable_type"
   end
 
   create_table "spree_zones", force: :cascade do |t|
