@@ -24,8 +24,9 @@ services:
     image: postgres:18-alpine
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
+      PGDATA: /var/lib/postgresql/18/docker
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql
     healthcheck:
       test: pg_isready -U postgres
       interval: 5s
