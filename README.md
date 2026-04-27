@@ -73,28 +73,7 @@ See [Environment Variables docs](https://docs.spreecommerce.org/developer/deploy
 
 ## Customization
 
-This is a standard Rails application. Customize it however you need:
-
-- **Add gems** to `Gemfile`
-- **Override models** with decorators in `app/models/`
-- **Add controllers** in `app/controllers/`
-- **Configure Spree** in `config/initializers/spree.rb`
-- **Add migrations** with `bin/rails generate migration`
-
-See the [Spree Customization Guide](https://docs.spreecommerce.org/developer/customization) for details.
-
-## Spree Core Development
-
-To develop against a local checkout of the Spree gems:
-
-```bash
-# Set SPREE_PATH to your local spree monorepo
-echo 'SPREE_PATH=../spree' > .env
-bundle install
-bin/dev
-```
-
-The `Gemfile` automatically uses local gems when `SPREE_PATH` is set.
+This is a standard Spree application. Customize it however you need. See the [Spree Customization Guide](https://docs.spreecommerce.org/developer/customization) for details.
 
 ## License
 
