@@ -50,6 +50,7 @@ gem 'sentry-ruby'
 gem 'sentry-sidekiq'
 gem 'sidekiq'
 gem 'stimulus-rails'
+gem 'rack-cors'
 gem 'tailwindcss-rails'
 gem 'thruster', require: false
 gem 'turbo-rails'
