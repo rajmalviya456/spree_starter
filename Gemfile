@@ -19,8 +19,12 @@ end
 spree_path = ENV['SPREE_PATH']
 
 if spree_path
-  gem 'spree', path: "#{spree_path}/spree"
-  gem 'spree_admin', path: "#{spree_path}/spree/admin"
+  path "#{spree_path}/spree" do
+    gem 'spree'
+    gem 'spree_admin'
+    gem 'spree_core'
+    gem 'spree_api'
+  end
 else
   spree_version = '>= 5.4.0'
   gem 'spree', spree_version
