@@ -677,7 +677,7 @@ GEM
     spree (5.4.3)
       spree_api (= 5.4.3)
       spree_core (= 5.4.3)
-    spree_admin (5.4.2)
+    spree_admin (5.4.3)
       active_link_to
       breadcrumbs_on_rails (~> 4.1)
       chartkick (~> 5.0)
@@ -688,7 +688,7 @@ GEM
       local_time (~> 3.0)
       mapkick-rb (~> 0.1)
       ruby-oembed (~> 0.18)
-      spree (>= 5.4.2)
+      spree (>= 5.4.3)
       stimulus-rails
       tailwindcss-rails (>= 4.0)
       tailwindcss-ruby (>= 4.0)
@@ -1177,7 +1177,7 @@ CHECKSUMS
   simplecov-html (0.13.2) sha256=bd0b8e54e7c2d7685927e8d6286466359b6f16b18cb0df47b508e8d73c777246
   simplecov_json_formatter (0.1.4) sha256=529418fbe8de1713ac2b2d612aa3daa56d316975d307244399fa4838c601b428
   spree (5.4.3) sha256=ec8d4719a0c3fff464db20746037d61af8b6fdf21f982435e4634980858297a4
-  spree_admin (5.4.2) sha256=9d18e2f3609b458beea01bb62c6a6942e9e6a9fce907619f4d4e1de6aa28b4c7
+  spree_admin (5.4.3) sha256=33ec5a75db0166e71566bd6adcd2fdced99ee9eb21e8bf3c966e8ddf49df737c
   spree_adyen (0.11.0) sha256=f22941571d4cde4ae12fc7aa13f37d85005b71f2c9c2ff50ec8d1dceabfd564a
   spree_api (5.4.3) sha256=2b057be20391fcbf128a23281746f4ca95f80f6abb680b4fd90f9ab5c22c223b
   spree_core (5.4.3) sha256=c234455ab012b4108e2592408f05e624917b7dc01093dc3c7e12fe7e7d677534
