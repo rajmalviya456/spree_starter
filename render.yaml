@@ -25,6 +25,10 @@ services:
         generateValue: true
       - key: RAILS_LOG_LEVEL
         value: info
+      # uncomment on plans with 2+ vCPUs (pro and up) to run one Puma process per vCPU;
+      # a Spree process needs ~1GB RAM, so this doesn't fit free/starter instances
+      # - key: WEB_CONCURRENCY
+      #   value: "2"
 
   # uncomment to add background jobs, requires standard (paid) plan
   # - type: worker
@@ -49,9 +53,11 @@ services:
   #         type: web
   #         envVarKey: SECRET_KEY_BASE
   #     - key: SIDEKIQ_CONCURRENCY
-  #       value: "25"
+  #       value: "10"
   #     - key: RAILS_MAX_THREADS
-  #       value: "27"
+  #       value: "12"
+  #     - key: MALLOC_ARENA_MAX
+  #       value: "2"
 
   - type: redis
     name: spree-redis
