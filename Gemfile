@@ -16,7 +16,7 @@ if File.exist?(env_file)
 end
 
 # Spree Commerce
-spree_path = ENV['SPREE_PATH']
+spree_path = ENV.fetch('SPREE_PATH', nil)
 
 if spree_path
   path "#{spree_path}/spree" do
@@ -24,11 +24,13 @@ if spree_path
     gem 'spree_admin'
     gem 'spree_core'
     gem 'spree_api'
+    gem 'spree_emails'
   end
 else
   spree_version = '>= 5.5.0.rc3'
   gem 'spree', spree_version
   gem 'spree_admin', spree_version
+  gem 'spree_emails', spree_version
 end
 
 # Extensions
