@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_18_000003) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_20_170310) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -346,6 +346,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_18_000003) do
   end
 
   create_table "spree_api_keys", force: :cascade do |t|
+    t.bigint "channel_id"
     t.datetime "created_at", null: false
     t.bigint "created_by_id"
     t.string "created_by_type"
@@ -361,6 +362,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_18_000003) do
     t.string "token_digest"
     t.string "token_prefix"
     t.datetime "updated_at", null: false
+    t.index ["channel_id"], name: "index_spree_api_keys_on_channel_id"
     t.index ["created_by_type", "created_by_id"], name: "index_spree_api_keys_on_created_by"
     t.index ["key_type"], name: "index_spree_api_keys_on_key_type"
     t.index ["revoked_by_type", "revoked_by_id"], name: "index_spree_api_keys_on_revoked_by"
