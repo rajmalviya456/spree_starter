@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_07_20_170310) do
+ActiveRecord::Schema[8.1].define(version: 2026_07_22_142925) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -987,6 +987,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_07_20_170310) do
     t.datetime "updated_at", null: false
     t.index ["channel_id", "active", "position"], name: "idx_order_routing_rules_lookup"
     t.index ["channel_id", "position"], name: "index_spree_order_routing_rules_on_channel_id_and_position"
+    t.index ["channel_id", "type"], name: "idx_order_routing_rules_channel_type", unique: true
     t.index ["channel_id"], name: "index_spree_order_routing_rules_on_channel_id"
     t.index ["store_id"], name: "index_spree_order_routing_rules_on_store_id"
     t.index ["type"], name: "index_spree_order_routing_rules_on_type"
