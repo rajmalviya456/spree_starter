@@ -983,7 +983,7 @@ CHECKSUMS
   google-protobuf (4.36.1-x86_64-darwin) sha256=e92bf3c90c0a9c410cbe430cf366190b1b9b5b2b784f6195a43a178c2ef7e338
   google-protobuf (4.36.1-x86_64-linux-gnu) sha256=e735a3f3d6596b1010013c2030778bc030770e659106fe7e4ae0f07631b551cb
   google-protobuf (4.36.1-x86_64-linux-musl) sha256=ae2712b7960e8b1f96d52fef8c2c0dc1cd230f2be13e48492dad0aa2a6a7cf03
-  googleapis-common-protos-types (1.23.0)
+  googleapis-common-protos-types (1.23.0) sha256=992e740a523794d9fc5f29a504465d8fc737aaa16c930fe7228e3346860faf0a
   highline (3.1.2) sha256=67cbd34d19f6ef11a7ee1d82ffab5d36dfd5b3be861f450fc1716c7125f4bb4a
   httparty (0.24.2) sha256=8fca6a54aa0c4aa4303a0fd33e5e2156175d6a5334f714263b458abd7fda9c38
   i18n (1.15.2) sha256=00f9eb62412fe593b2a65a97daa75300d37abb8f7202ec748e94b6d46a9dd1b5
@@ -1043,22 +1043,22 @@ CHECKSUMS
   octokit (4.25.1) sha256=c02092ee82dcdfe84db0e0ea630a70d32becc54245a4f0bacfd21c010df09b96
   oj (3.17.6) sha256=f511257e01a12030c3ceb8023cd2e96fca924ea9c741f57ea366816f1fd8e68c
   openssl (4.0.2) sha256=1037ad2868ae58df9ad917891c0c0f9815a1172f6846d4bcdd508e4c2ee747c2
-  opentelemetry-api (1.11.0)
-  opentelemetry-common (0.25.1)
-  opentelemetry-exporter-otlp (0.36.0)
-  opentelemetry-exporter-otlp-common (0.2.0)
-  opentelemetry-instrumentation-action_mailer (0.8.1)
-  opentelemetry-instrumentation-action_pack (0.18.1)
-  opentelemetry-instrumentation-active_job (0.13.0)
-  opentelemetry-instrumentation-active_record (0.13.0)
-  opentelemetry-instrumentation-active_support (0.12.1)
-  opentelemetry-instrumentation-base (0.26.1)
-  opentelemetry-instrumentation-concurrent_ruby (0.25.0)
-  opentelemetry-instrumentation-net_http (0.29.0)
-  opentelemetry-instrumentation-rack (0.31.1)
-  opentelemetry-registry (0.6.3)
-  opentelemetry-sdk (1.13.0)
-  opentelemetry-semantic_conventions (1.44.0)
+  opentelemetry-api (1.11.0) sha256=218c840170fa473974756668b32b6989570de07c7d3864627960209f189247e2
+  opentelemetry-common (0.25.1) sha256=38fe87c751e4e13fcd47a8290b4ad67bbedf76c4ed89aeced5ea5c620e66bfb1
+  opentelemetry-exporter-otlp (0.36.0) sha256=6d3d61244a5f14d29cd13f9229f2394f509f3ceaa30a9f3d60f9c556291f6448
+  opentelemetry-exporter-otlp-common (0.2.0) sha256=969cd9429865f565dc791a0606f97433c1ed14d691c8e3de78722e64903c2b38
+  opentelemetry-instrumentation-action_mailer (0.8.1) sha256=2f2784ca41de0f284b4e3339181cf2ed24ce4e1dfc2751355f0939fcd0872b09
+  opentelemetry-instrumentation-action_pack (0.18.1) sha256=0b827d703baa2951458e36f2bdfa4a2cdb17a0130cfb0e1b6fe5d67fadc85c2d
+  opentelemetry-instrumentation-active_job (0.13.0) sha256=42da156924bbabdaca6268be1e46963a04829bd0b2b82fc6e368597a3525cde2
+  opentelemetry-instrumentation-active_record (0.13.0) sha256=239fceaae5a42e82dd9dd87bc63b1888bea32058dac0779b5ea36110fcb3a299
+  opentelemetry-instrumentation-active_support (0.12.1) sha256=c90dc3bb2a02ab614f95bee56f8f14ba6164a7dfaee6f87a2ca3de30fa87413d
+  opentelemetry-instrumentation-base (0.26.1) sha256=49e8d35d565e1a13b4a6b794a4cca4ed8c590d9b33bda5244249bd98c8673775
+  opentelemetry-instrumentation-concurrent_ruby (0.25.0) sha256=722912e7078e3025a84a25d0b6085702417598c58187c19a762234702cbf7b2d
+  opentelemetry-instrumentation-net_http (0.29.0) sha256=fae5eb6a794bbf87fb15752343b74d5cfd2bb830353f42cab3483fd2f3f84fe7
+  opentelemetry-instrumentation-rack (0.31.1) sha256=29a9c145ce6d3fa2938f30334209787c29b581a51fdb472e2098a1d69e15536a
+  opentelemetry-registry (0.6.3) sha256=568fa8eaea94394f29f4fce3f0339ab10c3bf6d6c8beed6b3cfee6fd37fcc608
+  opentelemetry-sdk (1.13.0) sha256=eea4ab625eb901ecfe1083049862d4853fd16d94029f3cdd16526c81332f0fff
+  opentelemetry-semantic_conventions (1.44.0) sha256=b09b8793422f13b01c08f7a6f29b5f511f47f37bcdb57c0513465a0464168513
   ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
   pagy (43.6.2) sha256=b1d461b6bb43ce410ed2b9f09ce2a90430fa804265d167207a30337ea45c1dd3
   parallel (2.2.0) sha256=e1059c5fd7b649558a0aec38a769f06a42942bdb40503d005a59c352fe011cd8
@@ -1136,18 +1136,18 @@ CHECKSUMS
   solid_cable (4.0.2) sha256=084636a67679ad00d23088b33c84047e614bcf41ee559db24b414d83cdc42d03
   solid_cache (1.0.10) sha256=bc05a2fb3ac78a6f43cbb5946679cf9db67dd30d22939ededc385cb93e120d41
   solid_queue (1.7.0) sha256=6566b70b801d1c317c81bba7bcdd5677c019afac584a30374b4164002ca356d3
-  spree (6.0.0.beta1)
-  spree_api (6.0.0.beta1)
-  spree_core (6.0.0.beta1)
-  spree_dashboard (6.0.0.beta1)
+  spree (6.0.0.beta1) sha256=8204f49ac9e024d920f654162f4a5f0164fd240e7da55ac99eb37d3147eb745c
+  spree_api (6.0.0.beta1) sha256=05cbe1f328035701708032f2bc897120ae9007f3d3bc2e3e1d3b2e64d5492e97
+  spree_core (6.0.0.beta1) sha256=96c795b6ffe860b89f2c09cb7f488cb651cdc622e9b760805a9100d034817dab
+  spree_dashboard (6.0.0.beta1) sha256=6e65da7240063fb329209efe758e79635eb177aac3539a8a8cdaea38994f1b8d
   spree_dev_tools (0.6.3) sha256=86e47e989c7706740fe7220974c19207feaaec1cd0c7b67d609f50c3cb43c6bb
-  spree_easypost (6.0.0.beta1)
-  spree_emails (6.0.0.beta1)
+  spree_easypost (6.0.0.beta1) sha256=3fa1f976dc837afb275c45dbb153a04f63598e1b9564f3bb26aae83bdd8574d2
+  spree_emails (6.0.0.beta1) sha256=7f51b5d0b054eac1ddf12ec0c0a6b622618bdf36ae27115c7f8e633fb6b89951
   spree_extension (1.0.2) sha256=71725dafe45319a2be1bd2b564a416afe8029af8e18ac703bdb835e09553e1df
   spree_i18n (5.3.3) sha256=e2b75d3174a70d626503827e7fefb3595f92ee41e356dd05a066ced39d562102
-  spree_meilisearch (6.0.0.beta1)
-  spree_opentelemetry (6.0.0.beta1)
-  spree_stripe (6.0.0.beta1)
+  spree_meilisearch (6.0.0.beta1) sha256=ad8d05351b331a2a8db918974908207ab7fbea95f87604a3d2116ca2ea0f225c
+  spree_opentelemetry (6.0.0.beta1) sha256=6381407910546f12aadd42b278ecd91ae6a83a2fb81300eceb98da390bdcb424
+  spree_stripe (6.0.0.beta1) sha256=76465037aa18301e69a18327438459fb2f73b16f1a0725c473f6571efbea3bb0
   sqids (0.2.2) sha256=c2d31e0dfb6c32d17c10b59df059a299af93bef716d700ff70d77156df702d36
   ssrf_filter (1.6.0) sha256=78d15bc26d0385c931f46f12a9c1cbb90e6556bd96b95f25e5a5f786c8dcf999
   stimulus-rails (1.3.4) sha256=765676ffa1f33af64ce026d26b48e8ffb2e0b94e0f50e9119e11d6107d67cb06
@@ -1173,7 +1173,7 @@ CHECKSUMS
   uri (1.1.1) sha256=379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6
   useragent (0.16.11) sha256=700e6413ad4bb954bb63547fa098dddf7b0ebe75b40cc6f93b8d54255b173844
   validates_zipcode (0.6.0) sha256=9f9c10a9c75a14411cea2f65f04fb0089b9f284ebf59faa3e75a9e3d20d1a236
-  valvat (2.0.1)
+  valvat (2.0.1) sha256=f148079e08bf290a7be4c1d30463c8ce44f3788260d724d33cdb43832575fc06
   wannabe_bool (0.7.1) sha256=838ef671066868424de888fb22eeae57c7012709aabd5d17141ea6fea964c61f
   web-console (4.3.0) sha256=e13b71301cdfc2093f155b5aa3a622db80b4672d1f2f713119cc7ec7ac6a6da4
   websocket (1.2.11) sha256=b7e7a74e2410b5e85c25858b26b3322f29161e300935f70a0e0d3c35e0462737
