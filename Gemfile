@@ -38,7 +38,7 @@ if spree_path
     gem 'spree_opentelemetry'
   end
 else
-  spree_version = '>= 6.0.0.beta'
+  spree_version = '>= 6.0.0.beta1'
   gem 'spree', spree_version
   gem 'spree_emails', spree_version
   gem 'spree_dashboard', spree_version
