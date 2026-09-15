@@ -33,19 +33,19 @@ if spree_path
     gem 'spree_dashboard'
     gem 'spree_easypost'
     gem 'spree_emails'
-    # Optional search provider; product search runs on the database unless
-    # MEILISEARCH_URL is set.
     gem 'spree_meilisearch'
     gem 'spree_stripe'
+    gem 'spree_opentelemetry'
   end
 else
-  spree_version = { github: 'spree/spree', branch: 'main', 'glob': 'spree/**/*.gemspec' }
+  spree_version = '>= 6.0.0.beta'
   gem 'spree', spree_version
   gem 'spree_emails', spree_version
   gem 'spree_dashboard', spree_version
   gem 'spree_easypost', spree_version
   gem 'spree_meilisearch', spree_version
   gem 'spree_stripe', spree_version
+  gem 'spree_opentelemetry', spree_version
 end
 
 # Extensions
