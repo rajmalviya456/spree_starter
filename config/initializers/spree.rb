@@ -53,13 +53,9 @@ Rails.application.config.after_initialize do
 
   # Spree.exports << Spree::Exports::Payments
   # Spree.reports << Spree::Reports::MassivelyOvercomplexReportForCfo
-
-  # Role-based permissions
-  Spree.permissions.assign(:default, [Spree::PermissionSets::DefaultCustomer])
-  Spree.permissions.assign(:admin, [Spree::PermissionSets::SuperUser])
 end
 
-Spree.user_class = 'Spree::User'
+Spree.customer_class = 'Spree::Customer'
 Spree.admin_user_class = 'Spree::AdminUser'
 
 # Serve Active Storage attachment URLs (product images, logos, etc.) from a CDN
@@ -77,7 +73,7 @@ Spree.queues.products = :spree_products
 Spree.queues.reports = :spree_reports
 Spree.queues.variants = :spree_variants
 Spree.queues.taxons = :spree_taxons
-Spree.queues.stock_location_stock_items = :spree_stock_location_stock_items
+Spree.queues.stock_location_stock_levels = :spree_stock_location_stock_levels
 Spree.queues.coupon_codes = :spree_coupon_codes
 Spree.queues.addresses = :spree_addresses
 Spree.queues.gift_cards = :spree_gift_cards
@@ -88,11 +84,5 @@ Spree.queues.search = :spree_search
 
 # Search provider
 if ENV['MEILISEARCH_URL'].present?
-  Spree.search_provider = 'Spree::SearchProvider::Meilisearch'
+  Spree.search_provider = 'SpreeMeilisearch::SearchProvider'
 end
-
-Rails.application.config.to_prepare do
-  require_dependency 'spree/authentication_helpers'
-end
-
-Devise.parent_controller = 'Spree::BaseController' if defined?(Devise) && Devise.respond_to?(:parent_controller)

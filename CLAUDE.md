@@ -19,11 +19,11 @@ Otherwise, refer to:
 ## Architecture
 
 - Rails app with Spree engines mounted at `/`
-- Admin dashboard at `/admin`
+- React admin dashboard at `/dashboard` (served by `spree_dashboard`; authenticates via the Admin API)
 - Store API v3 at `/api/v3/store/`
 - Admin API v3 at `/api/v3/admin/`
 - Background jobs via Solid Queue (in Postgres, runs inside Puma by default) — dashboard at `/jobs`
-- Product search runs on the database by default; optional Meilisearch provider activates when `MEILISEARCH_URL` is set (compose service ships commented out)
+- Product search runs on the database by default; the optional Meilisearch provider (`spree_meilisearch`) activates when `MEILISEARCH_URL` is set (compose service ships commented out)
 
 ## Key Files
 
@@ -131,7 +131,7 @@ end
 
 ```bash
 bin/setup              # Install dependencies, prepare database, index search
-bin/dev                # Start web (jobs run in-process) + admin CSS watcher
+bin/dev                # Start web (jobs run in-process)
 bin/rails console      # Rails console
 bin/rails db:migrate   # Run migrations
 bin/rails db:seed      # Seed the databases
@@ -141,7 +141,7 @@ bin/rails db:seed      # Seed the databases
 
 - All custom code goes in `app/` — never modify gem source
 - Use decorators in `app/models/spree/` for model extensions
-- Use `Spree.user_class` / `Spree.admin_user_class` — never reference `Spree::User` directly
+- Use `Spree.customer_class` / `Spree.admin_user_class` — never reference `Spree::Customer` directly
 - All Spree models are namespaced under `Spree::` (e.g., `Spree::Product`, `Spree::Order`)
 - Use `Spree::Current.store`, `Spree::Current.currency`, `Spree::Current.locale` for request context
 - Prefixed IDs in API (e.g., `prod_86Rf07xd4z`) — never expose raw database IDs

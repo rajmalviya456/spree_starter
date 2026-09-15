@@ -22,10 +22,21 @@ Rails.application.configure do
     config.action_mailer.default_options = { from: ENV["SMTP_FROM_ADDRESS"] } if ENV["SMTP_FROM_ADDRESS"].present?
     config.action_mailer.raise_delivery_errors = true
   else
-    config.action_mailer.delivery_method = :letter_opener
+    config.action_mailer.delivery_method = :logger
     config.action_mailer.raise_delivery_errors = false
   end
   config.action_mailer.perform_deliveries = true
+
+  # Rails' default ".localhost" rule rejects Host headers that carry a port
+  # (foo.localhost:1355), which is how local https proxies (portless, Caddy)
+  # forward requests. Allow any .localhost host, with or without a port.
+  config.hosts << /\A[a-z0-9-]+(\.[a-z0-9-]+)*\.localhost(:\d+)?\z/i
+
+  # Tunnels that expose this dev server to the outside world, so third-party
+  # webhooks (carriers, payment gateways) can reach it. Each tunnel gets a
+  # fresh random hostname, so the whole domain is allowed rather than one name.
+  config.hosts << /\A[a-z0-9-]+\.trycloudflare\.com\z/i
+  config.hosts << /\A[a-z0-9-]+\.ngrok(-free)?\.(app|io|dev)\z/i
 
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -60,8 +71,20 @@ Rails.application.configure do
   # Make template changes take effect immediately.
   config.action_mailer.perform_caching = false
 
-  # Set localhost to be used by links generated in mailer templates.
-  config.action_mailer.default_url_options = { host: "localhost", port: 3000 }
+  # Canonical public host for all generated URLs — Active Storage attachment
+  # URLs in API payloads, links in emails, and any URL built outside a request
+  # context. Without it those fall back to the store's URL setting, which is
+  # "localhost:3000" on a fresh install, so a dev server on any other host or
+  # port serves payloads whose images 404.
+  #
+  # Host only, optionally with a port ("myapp.localhost", "localhost:4000").
+  # RAILS_PROTOCOL covers a proxy that terminates TLS in front of the dev
+  # server, where the app itself still speaks plain http.
+  public_host = ENV["RAILS_HOST"].presence || "localhost:3000"
+  public_protocol = ENV["RAILS_PROTOCOL"].presence || "http"
+
+  routes.default_url_options = { host: public_host, protocol: public_protocol }
+  config.action_mailer.default_url_options = { host: public_host, protocol: public_protocol }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
@@ -80,9 +103,6 @@ Rails.application.configure do
 
   # Highlight code that triggered redirect in logs.
   config.action_dispatch.verbose_redirect_logs = true
-
-  # Suppress logger output for asset requests.
-  config.assets.quiet = true
 
   # Annotate rendered view with file names.
   config.action_view.annotate_rendered_view_with_filenames = true
