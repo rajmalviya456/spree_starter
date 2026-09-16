@@ -189,7 +189,7 @@ GEM
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
-    faraday-http-cache (2.7.0)
+    faraday-http-cache (3.0.0)
       faraday (>= 0.8)
     faraday-net_http (3.4.4)
       net-http (~> 0.5)
@@ -430,7 +430,7 @@ GEM
       opentelemetry-registry (~> 0.1)
     opentelemetry-instrumentation-concurrent_ruby (0.25.0)
       opentelemetry-instrumentation-base (~> 0.25)
-    opentelemetry-instrumentation-net_http (0.29.0)
+    opentelemetry-instrumentation-net_http (0.29.1)
       opentelemetry-instrumentation-base (~> 0.25)
     opentelemetry-instrumentation-rack (0.31.1)
       opentelemetry-instrumentation-base (~> 0.25)
@@ -704,7 +704,7 @@ GEM
       wannabe_bool
     spree_dashboard (6.0.0.beta1)
       spree (= 6.0.0.beta1)
-    spree_dev_tools (1.0.0.beta1)
+    spree_dev_tools (1.0.0.beta2)
       awesome_print
       brakeman
       database_cleaner
@@ -920,7 +920,7 @@ CHECKSUMS
   factory_bot (6.6.0) sha256=1fc1b3b5620ec980a6a27aec1b6ec8c250ca82962e970e8a40f93e8d388d4b89
   factory_bot_rails (6.5.1) sha256=d3cc4851eae4dea8a665ec4a4516895045e710554d2b5ac9e68b94d351bc6d68
   faraday (2.14.4) sha256=9bb4408c44621b0dbaaaa39e5dbfc4dbe58cc6751b6eb94d16ae9e1f2f2fab6e
-  faraday-http-cache (2.7.0) sha256=cd7ac4bbe6c08592ea7af6655f98b2f76c4db0bad31bf40340df5aad719f0d89
+  faraday-http-cache (3.0.0) sha256=44e0b5441825b80aa59446fdb0ceb5a1cf83e9f58fc89752b336d87a991c7994
   faraday-net_http (3.4.4) sha256=0e78af151747ed1b00f33e25973b4bc220d7f16c00c39676817c8b12331eb588
   ffaker (2.25.0) sha256=e485c5adf8195aac55662875b7f515469bca46d77b60d0e7d08db6861bcbec40
   ffi (1.17.4-aarch64-linux-gnu) sha256=b208f06f91ffd8f5e1193da3cae3d2ccfc27fc36fba577baf698d26d91c080df
@@ -1017,7 +1017,7 @@ CHECKSUMS
   opentelemetry-instrumentation-active_support (0.12.1) sha256=c90dc3bb2a02ab614f95bee56f8f14ba6164a7dfaee6f87a2ca3de30fa87413d
   opentelemetry-instrumentation-base (0.26.1) sha256=49e8d35d565e1a13b4a6b794a4cca4ed8c590d9b33bda5244249bd98c8673775
   opentelemetry-instrumentation-concurrent_ruby (0.25.0) sha256=722912e7078e3025a84a25d0b6085702417598c58187c19a762234702cbf7b2d
-  opentelemetry-instrumentation-net_http (0.29.0) sha256=fae5eb6a794bbf87fb15752343b74d5cfd2bb830353f42cab3483fd2f3f84fe7
+  opentelemetry-instrumentation-net_http (0.29.1) sha256=d42120e83e6b04a3d0b3bb2e4fc04f62ef79c7110dbe291861a6609380daea2e
   opentelemetry-instrumentation-rack (0.31.1) sha256=29a9c145ce6d3fa2938f30334209787c29b581a51fdb472e2098a1d69e15536a
   opentelemetry-registry (0.6.3) sha256=568fa8eaea94394f29f4fce3f0339ab10c3bf6d6c8beed6b3cfee6fd37fcc608
   opentelemetry-sdk (1.13.0) sha256=eea4ab625eb901ecfe1083049862d4853fd16d94029f3cdd16526c81332f0fff
@@ -1101,7 +1101,7 @@ CHECKSUMS
   spree_api (6.0.0.beta1) sha256=05cbe1f328035701708032f2bc897120ae9007f3d3bc2e3e1d3b2e64d5492e97
   spree_core (6.0.0.beta1) sha256=96c795b6ffe860b89f2c09cb7f488cb651cdc622e9b760805a9100d034817dab
   spree_dashboard (6.0.0.beta1) sha256=6e65da7240063fb329209efe758e79635eb177aac3539a8a8cdaea38994f1b8d
-  spree_dev_tools (1.0.0.beta1) sha256=0b0e47b78768f1ee54e76278b18dd0ac068cd3ba36cbcba87db7f3dd1f0858ac
+  spree_dev_tools (1.0.0.beta2) sha256=93057fc91a384683eb85f458494fb3b22b363349c075c36b9ba44399da40de28
   spree_easypost (6.0.0.beta1) sha256=3fa1f976dc837afb275c45dbb153a04f63598e1b9564f3bb26aae83bdd8574d2
   spree_emails (6.0.0.beta1) sha256=7f51b5d0b054eac1ddf12ec0c0a6b622618bdf36ae27115c7f8e633fb6b89951
   spree_extension (1.0.2) sha256=71725dafe45319a2be1bd2b564a416afe8029af8e18ac703bdb835e09553e1df

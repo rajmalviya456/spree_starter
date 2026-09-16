@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+  # Routes for your own Spree API v3 resources. `bin/rails g spree:api_resource`
+  # adds a line here for each resource it generates; you can also add your own.
+  Spree::Core::Engine.add_routes do
+    namespace :api, defaults: { format: 'json' } do
+      namespace :v3 do
+        namespace :store do
+        end
+        namespace :admin do
+        end
+      end
+    end
+  end
+
   # This line mounts Spree's routes at the root of your application.
   # This means, any requests to URLs such as /products, will go to
   # Spree::ProductsController.
