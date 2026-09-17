@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_09_15_121236) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_17_183240) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pg_trgm"
@@ -321,6 +321,18 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_15_121236) do
     t.index ["token_digest"], name: "index_spree_api_keys_on_token_digest", unique: true
   end
 
+  create_table "spree_brands", force: :cascade do |t|
+    t.boolean "active", null: false
+    t.datetime "created_at", null: false
+    t.string "name", null: false
+    t.string "slug", null: false
+    t.bigint "store_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_spree_brands_on_name"
+    t.index ["store_id", "slug"], name: "index_spree_brands_on_store_id_and_slug", unique: true
+    t.index ["store_id"], name: "index_spree_brands_on_store_id"
+  end
+
   create_table "spree_calculators", force: :cascade do |t|
     t.bigint "calculable_id"
     t.string "calculable_type"
@@ -552,6 +564,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_15_121236) do
     t.datetime "canceled_at"
     t.datetime "created_at", null: false
     t.bigint "created_by_id"
+    t.string "created_by_type"
     t.datetime "denied_at"
     t.text "memo"
     t.jsonb "metadata"
@@ -564,6 +577,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_15_121236) do
     t.bigint "store_id", null: false
     t.datetime "updated_at", null: false
     t.index ["created_by_id"], name: "index_spree_claims_on_created_by_id"
+    t.index ["created_by_type", "created_by_id"], name: "index_spree_claims_on_created_by_actor"
     t.index ["number"], name: "index_spree_claims_on_number", unique: true
     t.index ["order_id"], name: "index_spree_claims_on_order_id"
     t.index ["reason_id"], name: "index_spree_claims_on_reason_id"
@@ -1235,6 +1249,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_15_121236) do
     t.datetime "canceled_at"
     t.datetime "created_at", null: false
     t.bigint "created_by_id"
+    t.string "created_by_type"
     t.datetime "fulfilled_at"
     t.text "memo"
     t.jsonb "metadata"
@@ -1247,6 +1262,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_15_121236) do
     t.bigint "store_id", null: false
     t.datetime "updated_at", null: false
     t.index ["created_by_id"], name: "index_spree_exchanges_on_created_by_id"
+    t.index ["created_by_type", "created_by_id"], name: "index_spree_exchanges_on_created_by_actor"
     t.index ["number"], name: "index_spree_exchanges_on_number", unique: true
     t.index ["order_id"], name: "index_spree_exchanges_on_order_id"
     t.index ["reason_id"], name: "index_spree_exchanges_on_reason_id"
@@ -1780,11 +1796,13 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_15_121236) do
     t.decimal "adjustment_total", precision: 10, scale: 2, default: "0.0", null: false
     t.datetime "approved_at", precision: nil
     t.bigint "approver_id"
+    t.string "approver_type"
     t.bigint "bill_address_id"
     t.text "cancel_note"
     t.bigint "cancel_reason_id"
     t.datetime "canceled_at", precision: nil
     t.bigint "canceler_id"
+    t.string "canceler_type"
     t.bigint "cart_id"
     t.string "channel", default: "spree"
     t.bigint "channel_id"
@@ -1798,6 +1816,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_15_121236) do
     t.string "coupon_code"
     t.datetime "created_at", null: false
     t.bigint "created_by_id"
+    t.string "created_by_type"
     t.string "currency"
     t.bigint "customer_id"
     t.text "customer_note"
@@ -1834,9 +1853,11 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_15_121236) do
     t.integer "total_quantity", default: 0
     t.datetime "updated_at", null: false
     t.index ["approver_id"], name: "index_spree_orders_on_approver_id"
+    t.index ["approver_type", "approver_id"], name: "index_spree_orders_on_approver_actor"
     t.index ["bill_address_id"], name: "index_spree_orders_on_bill_address_id"
     t.index ["cancel_reason_id"], name: "index_spree_orders_on_cancel_reason_id"
     t.index ["canceler_id"], name: "index_spree_orders_on_canceler_id"
+    t.index ["canceler_type", "canceler_id"], name: "index_spree_orders_on_canceler_actor"
     t.index ["cart_id"], name: "index_spree_orders_on_cart_id", unique: true
     t.index ["channel_id"], name: "index_spree_orders_on_channel_id"
     t.index ["company_id"], name: "index_spree_orders_on_company_id"
@@ -1845,6 +1866,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_15_121236) do
     t.index ["considered_risky"], name: "index_spree_orders_on_considered_risky"
     t.index ["coupon_code"], name: "index_spree_orders_on_coupon_code"
     t.index ["created_by_id"], name: "index_spree_orders_on_created_by_id"
+    t.index ["created_by_type", "created_by_id"], name: "index_spree_orders_on_created_by_actor"
     t.index ["customer_id", "created_by_id"], name: "index_spree_orders_on_customer_id_and_created_by_id"
     t.index ["fulfillment_status"], name: "index_spree_orders_on_fulfillment_status"
     t.index ["gift_card_id"], name: "index_spree_orders_on_gift_card_id"
@@ -2525,6 +2547,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_15_121236) do
     t.bigint "payment_id"
     t.bigint "refund_reason_id"
     t.bigint "refunder_id"
+    t.string "refunder_type"
     t.bigint "reimbursement_id"
     t.string "transaction_id"
     t.datetime "updated_at", null: false
@@ -2533,6 +2556,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_15_121236) do
     t.index ["payment_id"], name: "index_spree_refunds_on_payment_id"
     t.index ["refund_reason_id"], name: "index_refunds_on_refund_reason_id"
     t.index ["refunder_id"], name: "index_spree_refunds_on_refunder_id"
+    t.index ["refunder_type", "refunder_id"], name: "index_spree_refunds_on_refunder_actor"
     t.index ["reimbursement_id"], name: "index_spree_refunds_on_reimbursement_id"
   end
 
@@ -2659,6 +2683,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_15_121236) do
     t.datetime "canceled_at"
     t.datetime "created_at", null: false
     t.bigint "created_by_id"
+    t.string "created_by_type"
     t.text "memo"
     t.jsonb "metadata"
     t.string "number", null: false
@@ -2671,6 +2696,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_15_121236) do
     t.bigint "store_id", null: false
     t.datetime "updated_at", null: false
     t.index ["created_by_id"], name: "index_spree_returns_on_created_by_id"
+    t.index ["created_by_type", "created_by_id"], name: "index_spree_returns_on_created_by_actor"
     t.index ["number"], name: "index_spree_returns_on_number", unique: true
     t.index ["order_id"], name: "index_spree_returns_on_order_id"
     t.index ["reason_id"], name: "index_spree_returns_on_reason_id"
@@ -3029,12 +3055,14 @@ ActiveRecord::Schema[8.1].define(version: 2026_09_15_121236) do
     t.string "receivable_type", null: false
     t.datetime "received_at", null: false
     t.bigint "received_by_id"
+    t.string "received_by_type"
     t.string "reference"
     t.bigint "store_id", null: false
     t.datetime "updated_at", null: false
     t.index ["number"], name: "index_spree_stock_receipts_on_number", unique: true
     t.index ["receivable_type", "receivable_id"], name: "index_spree_stock_receipts_on_receivable"
     t.index ["received_by_id"], name: "index_spree_stock_receipts_on_received_by_id"
+    t.index ["received_by_type", "received_by_id"], name: "index_spree_stock_receipts_on_received_by_actor"
     t.index ["store_id"], name: "index_spree_stock_receipts_on_store_id"
   end
 
