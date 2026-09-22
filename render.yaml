@@ -1,5 +1,5 @@
 # Render Blueprint — one Docker web service plus Postgres. The web service
-# builds backend/Dockerfile with the repo root as context: your backend and
+# builds server/Dockerfile with the repo root as context: your server and
 # apps/dashboard ship in one image, with the dashboard served same-origin at
 # /dashboard (the stock dashboard when apps/dashboard is absent). Migrations
 # run from the image entrypoint on boot.
@@ -8,7 +8,7 @@ services:
     name: spree
     runtime: docker
     plan: free
-    dockerfilePath: ./backend/Dockerfile
+    dockerfilePath: ./server/Dockerfile
     dockerContext: .
     healthCheckPath: /up
     envVars:
@@ -38,7 +38,7 @@ services:
   #   name: spree-worker
   #   runtime: docker
   #   plan: standard
-  #   dockerfilePath: ./backend/Dockerfile
+  #   dockerfilePath: ./server/Dockerfile
   #   dockerContext: .
   #   dockerCommand: bin/jobs
   #   envVars:
