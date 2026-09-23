@@ -53,6 +53,18 @@ module SpreeStarter
     config.mission_control.jobs.http_basic_auth_password =
       ENV.fetch("MISSION_CONTROL_PASSWORD") { "spree123" if Rails.env.local? }
 
+    # Active Record encryption. Spree encrypts secrets at rest (webhook signing
+    # keys, payment gateway customer ids, OAuth tokens) only when these keys are
+    # configured — without them those columns are stored in plain text.
+    # Generate values with `bin/rails db:encryption:init`. Env vars win; the
+    # `active_record_encryption` credentials entry is the fallback. Never change
+    # the keys once data is encrypted — existing rows become unreadable.
+    %i[primary_key deterministic_key key_derivation_salt].each do |key|
+      value = ENV["ACTIVE_RECORD_ENCRYPTION_#{key.upcase}"].presence ||
+        credentials.dig(:active_record_encryption, key).presence
+      config.active_record.encryption[key] = value if value
+    end
+
     config.action_mailer.deliver_later_queue_name = :mailers
     config.active_storage.queues.purge = :active_storage_purge
     config.active_storage.queues.analysis = :active_storage_analysis

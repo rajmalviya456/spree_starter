@@ -15,6 +15,11 @@ x-app: &app
   environment:
     DATABASE_URL: postgres://postgres@postgres:5432/spree_production
     SECRET_KEY_BASE: ${SECRET_KEY_BASE}
+    # Active Record encryption keys (see .env.example) — without them Spree
+    # stores webhook signing keys, gateway customer ids and OAuth tokens in plain text.
+    ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY: ${ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY:-}
+    ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY: ${ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY:-}
+    ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT: ${ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT:-}
     RAILS_FORCE_SSL: ${RAILS_FORCE_SSL:-false}
     RAILS_ASSUME_SSL: ${RAILS_ASSUME_SSL:-false}
     # Public host for generated URLs (image/attachment URLs in API responses,
