@@ -21,22 +21,26 @@ default: &default
         - default
         - spree_imports
         - spree_payment_webhooks
+        - spree_stock_reservations
         - mailers
         - spree_events
         - spree_exports
         - spree_images
         - active_storage_transform
         - spree_products
-        - spree_reports
         - spree_variants
-        - spree_taxons
-        - spree_stock_location_stock_items
+        - spree_categories
+        - spree_collections
+        - spree_stock_location_stock_levels
         - spree_coupon_codes
         - spree_addresses
         - spree_gift_cards
         - spree_webhooks
         - spree_api_keys
         - spree_search
+        - spree_tax_identifiers
+        - spree_payouts
+        - spree_data_requests
         - active_storage_analysis
         - active_storage_purge
         - "*"

@@ -3,6 +3,11 @@
 # apps/dashboard ship in one image, with the dashboard served same-origin at
 # /dashboard (the stock dashboard when apps/dashboard is absent). Migrations
 # run from the image entrypoint on boot.
+#
+# Paths are written for a create-spree-app project (this file moves to the
+# project root, next to server/). Deploying this starter repo on its own?
+# Set both dockerfilePath values to ./Dockerfile — the Dockerfile detects the
+# standalone layout itself.
 services:
   - type: web
     name: spree

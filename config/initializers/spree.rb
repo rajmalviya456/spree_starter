@@ -1,46 +1,41 @@
 # frozen_string_literal: true
 
-# Configure Spree Preferences
+# Spree settings are configured with environment variables — see
+# https://spreecommerce.org/docs/developer/customization/configuration
+# for every setting and the variable that sets it.
 #
-# Note: Initializing preferences available within the Admin will overwrite any changes that were made through the user interface when you restart.
-#       If you would like users to be able to update a setting with the Admin it should NOT be set here.
+#   SPREE_MINIMUM_PASSWORD_LENGTH=10
 #
-# Note: If a preference is set here it will be stored within the cache & database upon initialization.
-#       Just removing an entry from this initializer will not make the preference value go away.
-#       Instead you must either set a new value or remove entry, clear cache, and remove database entry.
+# Anything that shapes how a shop sells — currency, taxes, when customers are
+# charged — belongs to the store and is edited in the dashboard, not here.
 #
-# In order to initialize a setting do:
-# config.setting_name = 'new value'
+# Use a Spree.config block only for a value that has to be computed in Ruby;
+# it is applied at boot and wins over the environment.
 #
-# More on configuring Spree preferences can be found at:
-# https://docs.spreecommerce.org/developer/customization
-Spree.config do |config|
-  # Example:
-  # Uncomment to stop tracking inventory levels in the application
-  # config.track_inventory_levels = false
-end
+# Spree.config do |config|
+#   config.minimum_password_length = 10
+# end
 
-# Configure Spree Dependencies
-#
-# Note: If a dependency is set here it will NOT be stored within the cache & database upon initialization.
-#       Just removing an entry from this initializer will make the dependency value go away.
-#
-# More on how to use Spree dependencies can be found at:
-# https://docs.spreecommerce.org/customization/dependencies
+# Swap a Spree service or workflow for your own — see
+# https://spreecommerce.org/docs/developer/customization/dependencies
+# Prefer a workflow hook when you only need to run code inside an existing flow:
+# https://spreecommerce.org/docs/developer/customization/workflows
 Spree.dependencies do |dependencies|
   # Example:
-  # Uncomment to change the default Service handling adding Items to Cart
-  # dependencies.cart_add_item_service = 'MyNewAwesomeService'
+  # dependencies.cart_add_item_workflow = 'MyApp::Carts::AddItem'
 end
 
-Rails.application.config.after_initialize do
-  # Spree.shipping_methods << Spree::ShippingMethods::SuperExpensiveNotVeryFastShipping
-  # Spree.payment_methods << Spree::PaymentMethods::VerySafeAndReliablePaymentMethod
+# Workflow hooks, e.g.
+# Spree.hooks.register('carts.add_item.validate', 'MyApp::CheckPurchaseLimit')
 
+Rails.application.config.after_initialize do
+  # Payment methods and shipping calculators
+  # Spree.payment_methods << Spree::PaymentMethods::VerySafeAndReliablePaymentMethod
+  # Spree.calculators.shipping_methods << Spree::ShippingMethods::SuperExpensiveNotVeryFastShipping
   # Spree.calculators.tax_rates << Spree::TaxRates::FinanceTeamForcedMeToCodeThis
 
+  # Stock splitters and adjusters
   # Spree.stock_splitters << Spree::Stock::Splitters::SecretLogicSplitter
-
   # Spree.adjusters << Spree::Adjustable::Adjuster::TaxTheRich
 
   # Custom promotions
@@ -49,10 +44,14 @@ Rails.application.config.after_initialize do
   # Spree.promotions.rules << Spree::Promotions::Rules::OnlyForVIPCustomers
   # Spree.promotions.actions << Spree::Promotions::Actions::GiftWithPurchase
 
-  # Spree.taxon_rules << Spree::TaxonRules::ProductsWithColor
+  # Automatic collection rules
+  # Rails.application.config.spree.collection_rules << Spree::CollectionRules::ProductsWithColor
 
-  # Spree.exports << Spree::Exports::Payments
-  # Spree.reports << Spree::Reports::MassivelyOvercomplexReportForCfo
+  # Exports
+  # Spree.export_types << Spree::Exports::Payments
+
+  # Event subscribers (generate with `bin/rails g spree:subscriber`)
+  # Spree.subscribers << OrderPlacedSubscriber
 end
 
 Spree.customer_class = 'Spree::Customer'
@@ -64,23 +63,32 @@ Spree.admin_user_class = 'Spree::AdminUser'
 Spree.cdn_host = ENV['CDN_HOST'] if ENV['CDN_HOST'].present?
 
 # Background job queue configuration
+#
+# Every Spree queue gets its own name so config/queue.yml can order them
+# (checkout-critical first, bulk catalog work later). Any queue assigned here
+# must also be listed in config/queue.yml — under Sidekiq, in
+# config/sidekiq.yml, where an unlisted queue never runs.
 Spree.queues.default = :default
+Spree.queues.addresses = :spree_addresses
+Spree.queues.api_keys = :spree_api_keys
+Spree.queues.categories = :spree_categories
+Spree.queues.collections = :spree_collections
+Spree.queues.coupon_codes = :spree_coupon_codes
+Spree.queues.data_requests = :spree_data_requests
 Spree.queues.events = :spree_events
 Spree.queues.exports = :spree_exports
+Spree.queues.gift_cards = :spree_gift_cards
 Spree.queues.images = :spree_images
 Spree.queues.imports = :spree_imports
-Spree.queues.products = :spree_products
-Spree.queues.reports = :spree_reports
-Spree.queues.variants = :spree_variants
-Spree.queues.taxons = :spree_taxons
-Spree.queues.stock_location_stock_levels = :spree_stock_location_stock_levels
-Spree.queues.coupon_codes = :spree_coupon_codes
-Spree.queues.addresses = :spree_addresses
-Spree.queues.gift_cards = :spree_gift_cards
-Spree.queues.webhooks = :spree_webhooks
 Spree.queues.payment_webhooks = :spree_payment_webhooks
-Spree.queues.api_keys = :spree_api_keys
+Spree.queues.payouts = :spree_payouts
+Spree.queues.products = :spree_products
 Spree.queues.search = :spree_search
+Spree.queues.stock_location_stock_levels = :spree_stock_location_stock_levels
+Spree.queues.stock_reservations = :spree_stock_reservations
+Spree.queues.tax_identifiers = :spree_tax_identifiers
+Spree.queues.variants = :spree_variants
+Spree.queues.webhooks = :spree_webhooks
 
 # Search provider
 if ENV['MEILISEARCH_URL'].present?

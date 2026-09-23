@@ -21,19 +21,21 @@ ARG SPREE_CLI_VERSION=^3.0.0
 # `spree build --production`):
 #
 #   create-spree-app project:
-#     context = repo root; Rails app in backend/, React Dashboard in
-#     apps/dashboard/.
+#     context = repo root; Rails app in server/ (backend/ in projects
+#     scaffolded before the rename), React Dashboard in apps/dashboard/.
 #
 #   standalone:
-#     context = Rails app root, no backend/ or apps/.
+#     context = Rails app root, no server/, backend/ or apps/.
 #
-# backend/Gemfile marks the project layout; apps/dashboard/ and
+# server/Gemfile (or backend/Gemfile) marks the project layout; apps/dashboard/ and
 # apps/seller-dashboard/ mark customized apps (without them, the stock
 # templates bundled with @spree/cli are baked).
 FROM docker.io/library/alpine:3.21 AS ctx
 COPY . /ctx
 RUN mkdir -p /rails-src /dashboard-src /seller-dashboard-src && \
-  if [ -f /ctx/backend/Gemfile ]; then \
+  if [ -f /ctx/server/Gemfile ]; then \
+    cp -R /ctx/server/. /rails-src/; \
+  elif [ -f /ctx/backend/Gemfile ]; then \
     cp -R /ctx/backend/. /rails-src/; \
   else \
     cp -R /ctx/. /rails-src/; \
